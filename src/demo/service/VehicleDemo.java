@@ -12,8 +12,9 @@ public class VehicleDemo implements Demo {
 
     final Vehicle vehicle;
 
-    @Autowired()
-    public VehicleDemo(Vehicle vehicle) {
+    @Autowired
+
+    public VehicleDemo(@Qualifier("tractor") Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
