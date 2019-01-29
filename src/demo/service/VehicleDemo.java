@@ -1,25 +1,15 @@
 package demo.service;
 
 import demo.model.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
+public abstract class VehicleDemo implements Demo {
+    private final Vehicle vehicle;
 
-@Service
-@Qualifier("vehicleDemo")
-public class VehicleDemo implements Demo {
-
-    final Vehicle vehicle;
-
-    @Autowired
-
-    public VehicleDemo(@Qualifier("tractor") Vehicle vehicle) {
+    VehicleDemo(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
-
+    @Override
     public void start() {
         vehicle.run();
     }
-
 }
